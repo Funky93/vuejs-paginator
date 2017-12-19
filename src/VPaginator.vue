@@ -1,12 +1,10 @@
 <template>
   <div class="v-paginator">
-    <button :class="config.classes_prev" @click="fetchData(prev_page_url)" :disabled="!prev_page_url">
-      {{config.previous_button_text}}
-    </button>
-    <span>Page {{current_page}} of {{last_page}}</span>
-    <button :class="config.classes_next" @click="fetchData(next_page_url)" :disabled="!next_page_url">
-      {{config.next_button_text}}
-    </button>
+    <ul class="pagination pagination-sm">
+      <li class="page-item"><a class="page-link" href="#" @click="fetchData(prev_page_url)" :disabled="!prev_page_url">{{config.previous_button_text}}</a></li>
+      <li class="page-item"><a class="page-link">Page {{current_page}} of {{last_page}}</a></li>
+      <li class="page-item"><a class="page-link" href="#" @click="fetchData(next_page_url)" :disabled="!next_page_url">{{config.next_button_text}}</a></li>
+    </ul>
   </div>
 </template>
 
